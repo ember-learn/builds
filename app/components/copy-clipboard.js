@@ -1,32 +1,21 @@
-/* globals ZeroClipboard */
-import Ember from 'ember';
+import Component from 'ember-cli-clipboard/components/copy-button';
+import layout from 'ember-cli-clipboard/templates/components/copy-button';
 
-export default Ember.Component.extend({
-  tagName: 'span',
-  hasFlash: ZeroClipboard.detectFlashSupport(),
+export default Component.extend({
+  layout: layout,
+  attributeBindings: ['data-label', 'disabled'],
+  classNameBindings: ['loading', 'disabled'],
 
-  didInsertElement: function () {
-    var clip = new ZeroClipboard(this.$('button'), {
-      // This would normally be a relative path
-      moviePath: "/images/ZeroClipboard.swf",
+  loading: false,
+  disabled: false,
 
-      trustedDomains: ["*"],
-      allowScriptAccess: "always"
-    });
+  click() {
+    this.set('loading', true);
+    this.set('disabled', true);
 
-    clip.on('mousedown', function(/*client, e*/) {
-      Ember.run.later(this, function() {
-        Ember.$(this).removeClass('loading');
-        Ember.$(this).removeAttr('disabled');
-      }, 1000);
-      Ember.run.next(this, function() {
-        Ember.$(this).addClass('loading');
-        Ember.$(this).attr('disabled', 'disabled');
-      });
-    });
-
-    this.$('input').on('click', function() {
-      Ember.$(this).select();
-    });
+    Ember.run.later(this, () => {
+      this.set('loading', false);
+      this.set('disabled', false);
+    }, 1000);
   }
 });
