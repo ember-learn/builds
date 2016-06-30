@@ -3,7 +3,7 @@ import config from './config/environment';
 
 const Router = Ember.Router.extend({
   location: config.locationType,
-  rootURL: '/builds'
+  rootURL: '/builds/'
 });
 
 Router.map(function() {

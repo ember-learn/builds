@@ -59,11 +59,10 @@ export default Ember.Object.extend({
 
   filterFiles: function(filter, ignoreFiles){
     var files = this.get('files');
-    var ignoreFiles = Ember.A(ignoreFiles);
 
     return files.filter(function(e) {
       var name = e.get('name');
-      var ignored = ignoreFiles.any(function(f) { return name.indexOf(f) >= 0; });
+      var ignored = Ember.A(ignoreFiles).any(function(f) { return name.indexOf(f) >= 0; });
       var selected = filter.any(function(f) { return name.match(f); });
 
       return !ignored && selected;
