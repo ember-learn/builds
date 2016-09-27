@@ -5,6 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'builds',
     environment: environment,
     baseURL: '/',
+    rootURL: '/',
     locationType: 'auto',
     fingerprint: {
       enabled: false
@@ -43,7 +44,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.rootURL = '/builds';
   }
 
   return ENV;
