@@ -21,43 +21,59 @@ Project.reopenClass({
       baseFileName: 'ember',
       projectFilter: [ /ember\./, /ember-template-compiler/ ],
       projectRepo: 'emberjs/ember.js',
-      initialVersion: "2.4.0",
-      initialReleaseDate: "2016-02-29",
-      lastRelease: "2.4.4",
-      futureVersion: "2.4.5",
-      channel: "release",
-      date: "2016-04-03",
+      initialVersion: "2.4.5",
+      initialReleaseDate: "2016-06-06",
+      lastRelease: "2.4.6",
+      futureVersion: "2.4.7",
+      channel: "lts",
+      date: "2016-06-06",
       changelogPath: "CHANGELOG.md",
       enableTestURL: true,
       debugFileName: ".debug.js",
       ignoreFiles: ['ember.js'],
-      installWithEmberCLI: '# Install Ember %s:\nbower install --dev ember#v%s\n# Or, install the latest build of this channel which may include unreleased incremental changes:\nbower install --dev ember#release'
+      installWithEmberCLI: '# Install Ember %s:\nbower install --save ember#v%s\n# Or, install the latest build of this channel which may include unreleased incremental changes:\nbower install --save ember#release'
     }, {
       projectName: "Ember",
       baseFileName: 'ember',
       projectFilter: [ /ember\./, /ember-template-compiler/ ],
       projectRepo: 'emberjs/ember.js',
-      lastRelease: "2.5.0-beta.1",
-      futureVersion: "2.5.0-beta.2",
-      finalVersion: '2.5.0',
-      channel: "beta",
-      cycleEstimatedFinishDate: '2016-04-11',
-      date: "2016-02-29",
-      nextDate: "2016-03-07",
+      initialVersion: "2.8.0",
+      initialReleaseDate: "2016-09-08",
+      lastRelease: "2.8.0",
+      futureVersion: "2.8.1",
+      channel: "release",
+      date: "2016-09-08",
       changelogPath: "CHANGELOG.md",
       enableTestURL: true,
       debugFileName: ".debug.js",
       ignoreFiles: ['ember.js'],
-      installWithEmberCLI: '# Install Ember %s:\nbower install --dev ember#v%s\n# Or, install the latest build of this channel which may include unreleased incremental changes:\nbower install --dev ember#beta'
+      installWithEmberCLI: '# Install Ember %s:\nbower install --save ember#v%s\n# Or, install the latest build of this channel which may include unreleased incremental changes:\nbower install --save ember#release'
+    }, {
+      projectName: "Ember",
+      baseFileName: 'ember',
+      projectFilter: [ /ember\./, /ember-template-compiler/ ],
+      projectRepo: 'emberjs/ember.js',
+      lastRelease: "2.9.0-beta.2",
+      futureVersion: "2.9.0-beta.3",
+      finalVersion: '2.9.0',
+      channel: "beta",
+      cycleEstimatedFinishDate: '2016-10-17',
+      date: "2016-09-12",
+      nextDate: "2016-09-19",
+      changelogPath: "CHANGELOG.md",
+      enableTestURL: true,
+      debugFileName: ".debug.js",
+      ignoreFiles: ['ember.js'],
+      installWithEmberCLI: '# Install Ember %s:\nbower install --save ember#v%s\n# Or, install the latest build of this channel which may include unreleased incremental changes:\nbower install --save ember#beta'
     }, {
       projectName: "Ember Data",
       baseFileName: 'ember-data',
       projectFilter: [ /ember-data\./ ],
       projectRepo: 'emberjs/data',
-      lastRelease: "2.6.1",
-      futureVersion: "2.6.2",
+      lastRelease: "2.8.0",
+      futureVersion: "2.8.1",
       channel: "release",
-      date: "2016-06-15",
+      date: "2016-09-10",
       changelogPath: "CHANGELOG.md",
       debugFileName: ".js",
       installWithEmberCLI: '# Install Ember-Data %s:\nnpm install --save-dev ember-data@%s\n# Or, install the latest build of this channel which may include unreleased incremental changes:\nnpm install --save-dev emberjs/data#release'
@@ -66,11 +82,11 @@ Project.reopenClass({
       baseFileName: 'ember-data',
       projectFilter: [ /ember-data\./ ],
       projectRepo: 'emberjs/data',
-      lastRelease: "2.7.0-beta.2",
-      futureVersion: "2.7.0-beta.3",
-      finalVersion: '2.7.0',
+      lastRelease: "2.9.0-beta.1",
+      futureVersion: "2.9.0-beta.2",
+      finalVersion: '2.9.0',
       channel: "beta",
-      date: "2016-06-28",
+      date: "2016-09-11",
       changelogPath: "CHANGELOG.md",
       debugFileName: ".js",
       installWithEmberCLI: '# Install Ember-Data %s:\nnpm install --save-dev ember-data@%s\n# Or, install the latest build of this channel which may include unreleased incremental changes:\nnpm install --save-dev emberjs/data#beta'
@@ -83,7 +99,7 @@ Project.reopenClass({
       enableTestURL: true,
       debugFileName: ".debug.js",
       ignoreFiles: ['ember.js'],
-      installWithEmberCLI: '# Install the latest Ember canary:\nbower install --dev ember#canary'
+      installWithEmberCLI: '# Install the latest Ember canary:\nbower install --save ember#canary'
     }, {
       projectName: "Ember Data",
       baseFileName: 'ember-data',
@@ -93,7 +109,7 @@ Project.reopenClass({
       debugFileName: ".js",
       installWithEmberCLI: '# Install the latest Ember-Data canary:\nnpm install --save-dev emberjs/data#master'
     }],
-
+  
   all: function(channel){
     var projects;
 
