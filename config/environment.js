@@ -4,7 +4,6 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'builds',
     environment: environment,
-    baseURL: '/',
     rootURL: '/',
     locationType: 'auto',
     fingerprint: {

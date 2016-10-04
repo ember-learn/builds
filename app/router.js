@@ -6,6 +6,19 @@ const Router = Ember.Router.extend({
   rootURL: config.rootURL
 });
 
+Router.reopen({
+  didTransition() {
+    this._super();
+
+    var url = this.get('url');
+
+    // Add a slash if neccesary
+    if (!/^\//.test(url)){ url = '/' + url; }
+
+    // _gaq.push(['_trackPageview', '/builds' + url]);
+  }
+});
+
 Router.map(function() {
   this.route('release');
   this.route('beta');
