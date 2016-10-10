@@ -60,6 +60,16 @@
               <div class="beta-current-version">(coming {{format-date-time project.nextDate "MMM Do"}})</div>
             {{/if}}
           </div>
+          <div class="left {{if project.beta6Completed '' 'future-image'}}">
+            <div class="tiny-beta-image"></div>
+            <div class="beta-version">beta 6</div>
+            {{#if project.isBeta6}}
+              <div class="beta-current-version">(current beta)</div>
+            {{/if}}
+            {{#if project.isBeta5}}
+              <div class="beta-current-version">(coming {{format-date-time project.nextDate "MMM Do"}})</div>
+            {{/if}}
+          </div>
         </div>
         <div class="right future-image">
           <div class="small-release-image" title={{project.finalVersion}}></div>
