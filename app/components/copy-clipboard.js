@@ -1,6 +1,6 @@
+import Ember from 'ember';
 import Component from 'ember-cli-clipboard/components/copy-button';
 import layout from 'ember-cli-clipboard/templates/components/copy-button';
-import Ember from 'ember';
 
 export default Component.extend({
   layout: layout,

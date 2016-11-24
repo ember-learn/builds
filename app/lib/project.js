@@ -26,35 +26,28 @@ const FIXTURES = [
 ];
 
 Project.reopenClass({
-  all: function(channel){
-    var projects;
+  all(channel) {
+    var projects = FIXTURES;
 
-    if (channel) {
-      projects = FIXTURES.filterBy('channel', channel);
-    } else {
-      projects = FIXTURES;
-    }
+    if (channel) { projects = FIXTURES.filterBy('channel', channel); }
 
-    return projects.map(function(obj) {
-      return Project.create(obj);
-    });
+    return projects.map(obj => Project.create(obj));
   },
 
-  find: function(channel, name) {
+  find(channel, name) {
     var allProjects = this.all(channel);
 
-    if (!name) {
-      return allProjects;
-    } else {
-      return allProjects.filterBy('projectName', name);
-    }
+    if (!name) { return allProjects; }
+
+    return allProjects.filterBy('projectName', name);
   },
 
-  findOne: function(channel, name) {
+  findOne(channel, name) {
     var results = this.find(channel, name);
     if (results.length > 1) {
-      throw new Error('Expected one result from `find`, got '+results.length);
+      throw new Error(`Expected one result from \`find\`, got ${results.length}`);
     }
+
     return results[0];
   }
 });

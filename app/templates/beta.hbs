@@ -1,9 +1,12 @@
-{{project-listing
-  model=model
-  channel=channel
-  channelDescription=channelDescription
-  includeReleasesInFileList=includeReleasesInFileList
-  projects=projects
-  description=description
-  lastReleaseUrl=lastReleaseUrl
-  }}
+{{#project-listing
+    model=model
+    channel=channel
+    channelDescription=channelDescription
+    includeReleasesInFileList=includeReleasesInFileList
+    projects=projects
+    description=description
+    lastReleaseUrl=lastReleaseUrl
+    as |project|
+}}
+  {{release-timeline project=project}}
+{{/project-listing}}

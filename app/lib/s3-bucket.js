@@ -57,7 +57,7 @@ export default Ember.Object.extend({
     return this.get('files').length;
   }),
 
-  filterFiles: function(filter, ignoreFiles){
+  filterFiles(filter, ignoreFiles){
     var files = this.get('files');
 
     return files.filter(function(e) {
@@ -81,7 +81,7 @@ export default Ember.Object.extend({
     });
   })),
 
-  loadAllPages: function(marker, files) {
+  loadAllPages(marker, files) {
     var self = this;
     var baseUrl = this.get('objectBaseUrl');
 
@@ -92,7 +92,7 @@ export default Ember.Object.extend({
 
       self.set('response', data);
 
-      for(var i = 0; i < length; i++) {
+      for (var i = 0; i < length; i++) {
         var size = contents[i].getElementsByTagName('Size')[0].firstChild.data;
         var name = contents[i].getElementsByTagName('Key')[0].firstChild.data;
         var lastModified = new Date(contents[i].getElementsByTagName('LastModified')[0].firstChild.data);

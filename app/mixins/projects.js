@@ -2,10 +2,10 @@ import Ember from 'ember';
 import Project from 'builds/lib/project';
 
 export default Ember.Mixin.create({
-  projects: Ember.computed('channel', 'model', function(){
-    var projects = Project.find(this.get('channel')),
-        bucket   = this.get('model'),
-        self = this;
+  projects: Ember.computed('channel', 'model', function() {
+    var projects = Project.find(this.get('channel'));
+    var bucket   = this.get('model');
+    var self     = this;
 
     projects.forEach(function(project){
       if (project.channel === 'beta'){
@@ -47,7 +47,7 @@ export default Ember.Mixin.create({
     return projects;
   }),
 
-  description: function(project){
+  description(project) {
     var lastRelease = project.lastRelease,
         futureVersion = project.futureVersion,
         value;
@@ -65,7 +65,7 @@ export default Ember.Mixin.create({
     return new Ember.Handlebars.SafeString(value);
   },
 
-  lastReleaseUrl: function(project, channel, lastRelease, extension){
+  lastReleaseUrl(project, channel, lastRelease, extension) {
     if (channel === 'canary') {
       return 'http://builds.emberjs.com/canary/' + project + extension;
     } else {

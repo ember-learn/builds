@@ -17,13 +17,15 @@ module.exports = function(deployTarget) {
     accessKeyId: process.env.accessKeyId,
     secretAccessKey: process.env.secretAccessKey,
     bucket: process.env.bucket,
-    region: process.env.region
+    region: process.env.region,
+    prefix: "releases"
   };
   ENV['s3-index'] = {
     accessKeyId: process.env.accessKeyId,
     secretAccessKey: process.env.secretAccessKey,
     bucket: process.env.bucket,
     region: process.env.region,
+    prefix: "releases",
     filePattern: 'index.json'
   };
 
