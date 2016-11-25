@@ -18,3 +18,7 @@ testem.log
 
 .env.deploy.*
 .env
+
+.vscodeignore
+
+jsconfig.json
