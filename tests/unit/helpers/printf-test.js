@@ -3,8 +3,12 @@ import { module, test } from 'qunit';
 
 module('Unit | Helper | printf');
 
-// Replace this with your real tests.
-test('it works', function(assert) {
-  let result = printf([42]);
-  assert.ok(result);
+test('it replaces single %s with value', function(assert) {
+  let result = printf(["~%s~", 42]);
+  assert.equal(result, "~42~");
+});
+
+test('it replaces multilpe %s with value', function(assert) {
+  let result = printf(["~%s~%s~", 42]);
+  assert.equal(result, "~42~42~");
 });
