@@ -5,6 +5,6 @@ module('Unit | Helper | tag url path');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  let result = tagUrlPath([42]);
-  assert.ok(result);
+  let result = tagUrlPath(["http://example.org/tags/v1.10.0"]);
+  assert.equal(result, "tags/v1.10.0");
 });
