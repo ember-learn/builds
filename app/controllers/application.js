@@ -26,6 +26,6 @@ export default Ember.Controller.extend({
   }),
 
   isActiveChannel(channel) {
-    return this.get('currentRouteName').indexOf(channel) !== -1;
+    return this.get('currentRouteName').includes(channel);;
   }
 });
