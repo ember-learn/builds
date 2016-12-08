@@ -10,10 +10,7 @@ export default Ember.Controller.extend({
   }),
 
   isChannelsActive: Ember.computed('currentRouteName', function() {
-    var self = this;
-    return !['index','tagged'].some(function(name) {
-      return name === self.get('currentRouteName');
-    });
+    return !['index','tagged'].some(name => name === this.get('currentRouteName'));
   }),
 
   isReleaseActive: Ember.computed('currentRouteName', function() {
