@@ -13,6 +13,6 @@
   <tr>
     <td><a href={{file.url}}>{{file.name}}</a></td>
     <td>{{format-date-time file.lastModified}}</td>
-    <td>{{copy-clipboard label="Link" text=file.url}}</td>
+    <td>{{#copy-clipboard data-label="Link" text=file.url}}Link{{/copy-clipboard}}</td>
   </tr>
 {{/each}}
