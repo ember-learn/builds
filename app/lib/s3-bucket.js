@@ -15,7 +15,7 @@ export default Ember.Object.extend({
   endpoint: 's3.amazonaws.com',
 
   delimiterParameter: Ember.computed('delimiter', function(){
-    var delimiter = this.getWithDefault('delimiter','').toString();
+    let delimiter = this.getWithDefault('delimiter','').toString();
     return (delimiter) ? 'delimiter=' + delimiter : '';
   }),
 
@@ -58,19 +58,19 @@ export default Ember.Object.extend({
   }),
 
   filterFiles(filter, ignoreFiles){
-    var files = this.get('files');
+    let files = this.get('files');
 
     return files.filter(function(e) {
-      var name = e.get('name');
-      var ignored = Ember.A(ignoreFiles).any(function(f) { return name.indexOf(f) >= 0; });
-      var selected = filter.any(function(f) { return name.match(f); });
+      let name     = e.get('name');
+      let ignored  = Ember.A(ignoreFiles).any(f => name.indexOf(f) >= 0);
+      let selected = filter.any(f => name.match(f));
 
       return !ignored && selected;
     });
   },
 
   load: Ember.on('init', Ember.observer('queryUrl', function() {
-    var self = this;
+    let self = this;
     this.set('isLoading', true);
 
     this.loadAllPages('', []).then(function(files) {
@@ -82,20 +82,20 @@ export default Ember.Object.extend({
   })),
 
   loadAllPages(marker, files) {
-    var self = this;
-    var baseUrl = this.get('objectBaseUrl');
+    let self = this;
+    let baseUrl = this.get('objectBaseUrl');
 
     return Ember.$.get(this.get('queryUrl') + '&marker=' + marker).then(function(data) {
-      var contents = data.getElementsByTagName('Contents');
-      var isTruncated = data.getElementsByTagName('IsTruncated')[0].firstChild.data === "true";
-      var length = contents.length;
+      let contents = data.getElementsByTagName('Contents');
+      let isTruncated = data.getElementsByTagName('IsTruncated')[0].firstChild.data === "true";
+      let length = contents.length;
 
       self.set('response', data);
 
-      for (var i = 0; i < length; i++) {
-        var size = contents[i].getElementsByTagName('Size')[0].firstChild.data;
-        var name = contents[i].getElementsByTagName('Key')[0].firstChild.data;
-        var lastModified = new Date(contents[i].getElementsByTagName('LastModified')[0].firstChild.data);
+      for (let i = 0; i < length; i++) {
+        let size = contents[i].getElementsByTagName('Size')[0].firstChild.data;
+        let name = contents[i].getElementsByTagName('Key')[0].firstChild.data;
+        let lastModified = new Date(contents[i].getElementsByTagName('LastModified')[0].firstChild.data);
 
         files.push(
           S3File.create({
@@ -109,7 +109,7 @@ export default Ember.Object.extend({
       }
 
       if (isTruncated) {
-        var lastFile = files[files.length - 1];
+        let lastFile = files[files.length - 1];
         return self.loadAllPages(lastFile.get('name'), files);
       } else {
         return files;
