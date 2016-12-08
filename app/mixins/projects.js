@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import Project from 'builds/lib/project';
+import Project from '../lib/project';
 
 export default Ember.Mixin.create({
   projects: Ember.computed('channel', 'model', function() {
