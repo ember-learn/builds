@@ -2,7 +2,7 @@ import Ember from 'ember';
 import Project from '../lib/project';
 
 export default Ember.Mixin.create({
-  projects: Ember.computed('channel', 'model', function() {
+  projects: Ember.computed('channel', 'model', 'model.files', 'model.releaseSteps', function() {
     var projects = Project.find(this.get('channel'));
     var bucket   = this.get('model');
     var self     = this;
