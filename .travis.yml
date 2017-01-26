@@ -30,4 +30,3 @@ deploy:
   script: ember deploy production
   on:
     branch: master
-    
