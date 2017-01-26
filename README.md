@@ -1,7 +1,6 @@
 # Builds
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This app is used for the Builds page at [http://emberjs.com/builds/](http://emberjs.com/builds/).
 
 ## Prerequisites
 
