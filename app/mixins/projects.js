@@ -68,7 +68,7 @@ export default Ember.Mixin.create({
       value = 'The builds listed below are based on the most recent development.';
     }
 
-    return new Ember.Handlebars.SafeString(value);
+    return new Ember.String.htmlSafe(value);
   },
 
   lastReleaseUrl(project, channel, lastRelease, extension) {
