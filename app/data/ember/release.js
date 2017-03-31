@@ -8,7 +8,7 @@ export default {
   lastRelease: "2.12.0",
   futureVersion: "2.12.1",
   channel: "release",
-  date: "2017-03-19",
+  date: "2017-03-15",
   changelogPath: "CHANGELOG.md",
   enableTestURL: true,
   debugFileName: ".debug.js",
