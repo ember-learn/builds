@@ -7,10 +7,8 @@ export default Ember.Mixin.create({
     var bucket   = this.get('model');
     var self     = this;
 
-    if (this.constructor.toString() === "builds@controller:index:") {
+    if (this.isIndexController) {
       bucket = this.get('model.releaseSteps');
-    } else {
-      bucket = this.get('model');
     }
 
     projects.forEach(function(project){
