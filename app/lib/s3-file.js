@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Object.extend({
   scriptTag: Ember.computed('url', function() {
-    var escapedURL = Ember.Handlebars.Utils.escapeExpression(this.get('url'));
+    let escapedURL = Ember.Handlebars.Utils.escapeExpression(this.get('url'));
 
     return new Ember.String.htmlSafe('<script src="' + escapedURL + '"></script>').toString();
   }),

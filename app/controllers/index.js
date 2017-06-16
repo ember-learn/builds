@@ -8,8 +8,8 @@ export default Ember.Controller.extend(ProjectsMixin, {
   channelDescription: 'Release builds are production-ready versions of Ember and Ember-Data that have been through a six-week beta cycle.',
 
   latestVersionOfDocs: Ember.computed('model.release.lastRelease', function() {
-    var release = this.get('model.release.lastRelease');
-    var [major, minor] = release.split('.');
+    let release = this.get('model.release.lastRelease');
+    let [major, minor] = release.split('.');
 
     return `${major}.${minor}.0`;
   }),

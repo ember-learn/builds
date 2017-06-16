@@ -27,7 +27,7 @@ const FIXTURES = [
 
 Project.reopenClass({
   all(channel) {
-    var projects = FIXTURES;
+    let projects = FIXTURES;
 
     if (channel) { projects = FIXTURES.filterBy('channel', channel); }
 
@@ -35,7 +35,7 @@ Project.reopenClass({
   },
 
   find(channel, name) {
-    var allProjects = this.all(channel);
+    let allProjects = this.all(channel);
 
     if (!name) { return allProjects; }
 
@@ -43,7 +43,7 @@ Project.reopenClass({
   },
 
   findOne(channel, name) {
-    var results = this.find(channel, name);
+    let results = this.find(channel, name);
     if (results.length > 1) {
       throw new Error(`Expected one result from \`find\`, got ${results.length}`);
     }

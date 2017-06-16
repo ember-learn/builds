@@ -3,26 +3,26 @@ import Project from '../lib/project';
 
 export default Ember.Mixin.create({
   projects: Ember.computed('channel', 'model', 'model.files', 'model.releaseSteps', function() {
-    var projects = Project.find(this.get('channel'));
-    var bucket   = this.get('model');
-    var self     = this;
+    let projects = Project.find(this.get('channel'));
+    let bucket = this.get('model');
 
     if (this.isIndexController) {
       bucket = this.get('model.releaseSteps');
     }
 
-    projects.forEach(function(project){
-      if (project.channel === 'beta'){
+    projects.forEach((project) => {
+      if (project.channel === 'beta') {
         project.isEmberBeta = project.projectName === 'Ember';
 
-        [1,2,3,4,5].forEach(function(increment){
-          var versionParts = project.lastRelease.split('.');
-          var currentBetaNumber = parseInt(versionParts[versionParts.length - 1], 10);
-          project['beta' + increment + 'Completed'] = increment <= currentBetaNumber;
-          project['isBeta' + increment] = increment === currentBetaNumber;
+        [1,2,3,4,5].forEach((increment) => {
+          let versionParts = project.lastRelease.split('.');
+          let currentBetaNumber = parseInt(versionParts[versionParts.length - 1], 10);
+
+          project[`beta${increment}Completed`] = increment <= currentBetaNumber;
+          project[`isBeta${increment}`] = increment === currentBetaNumber;
         });
 
-        var release = Project.find('release', project.projectName)[0];
+        let release = Project.find('release', project.projectName)[0];
 
         // no releases exist for ember-data (yet)
         if (release) {
@@ -32,19 +32,19 @@ export default Ember.Mixin.create({
       }
 
       project.files = bucket.filterFiles(project.projectFilter, project.ignoreFiles);
-      project.description = self.description(project);
-      project.lastReleaseDebugUrl = self.lastReleaseUrl(project.baseFileName, project.channel, project.lastRelease, project.debugFileName);
-      project.lastReleaseProdUrl  = self.lastReleaseUrl(project.baseFileName, project.channel, project.lastRelease, '.prod.js');
-      project.lastReleaseMinUrl   = self.lastReleaseUrl(project.baseFileName, project.channel, project.lastRelease, '.min.js');
+      project.description = this.description(project);
+      project.lastReleaseDebugUrl = this.lastReleaseUrl(project.baseFileName, project.channel, project.lastRelease, project.debugFileName);
+      project.lastReleaseProdUrl  = this.lastReleaseUrl(project.baseFileName, project.channel, project.lastRelease, '.prod.js');
+      project.lastReleaseMinUrl   = this.lastReleaseUrl(project.baseFileName, project.channel, project.lastRelease, '.min.js');
 
       if (project.enableTestURL) {
-        project.lastReleaseTestUrl  = self.lastReleaseUrl(project.baseFileName, project.channel, project.lastRelease, '-tests-index.html');
+        project.lastReleaseTestUrl  = this.lastReleaseUrl(project.baseFileName, project.channel, project.lastRelease, '-tests-index.html');
       }
 
       if (project.channel === 'canary') {
         project.lastRelease = 'latest';
       } else if (project.changelog !== 'false') {
-        project.lastReleaseChangelogUrl   = 'https://github.com/' + project.projectRepo + '/blob/v' + project.lastRelease + '/' + project.changelogPath;
+        project.lastReleaseChangelogUrl   = `https://github.com/${project.projectRepo}/blob/v${project.lastRelease}/${project.changelogPath}` ;
       }
     });
 
@@ -52,16 +52,16 @@ export default Ember.Mixin.create({
   }),
 
   description(project) {
-    var lastRelease = project.lastRelease,
-        futureVersion = project.futureVersion,
-        value;
+    let lastRelease = project.lastRelease;
+    let futureVersion = project.futureVersion;
+    let value;
 
     if (this.get('channel') === 'tagged') {
       value = '';
     } else if (lastRelease) {
-      value = 'The builds listed below are incremental improvements made since ' + lastRelease + ' and may become ' + futureVersion + '.';
+      value = `The builds listed below are incremental improvements made since ${lastRelease} and may become ${futureVersion}.`;
     } else if (futureVersion) {
-      value = 'The builds listed below are not based on a tagged release. Upon the next release cycle they will become ' + futureVersion + '.';
+      value = `The builds listed below are not based on a tagged release. Upon the next release cycle they will become ${futureVersion}.`;
     } else {
       value = 'The builds listed below are based on the most recent development.';
     }
@@ -71,9 +71,9 @@ export default Ember.Mixin.create({
 
   lastReleaseUrl(project, channel, lastRelease, extension) {
     if (channel === 'canary') {
-      return 'http://builds.emberjs.com/canary/' + project + extension;
+      return `http://builds.emberjs.com/canary/${project}${extension}`;
     } else {
-      return 'http://builds.emberjs.com/tags/v' + lastRelease + '/' + project + extension;
+      return `http://builds.emberjs.com/tags/v${lastRelease}/${project}${extension}`;
     }
   }
 });
