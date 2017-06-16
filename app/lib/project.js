@@ -1,15 +1,15 @@
 import Ember from 'ember';
 
-import EmberTagged from '../data/ember/tagged';
-import EmberCanary from '../data/ember/canary';
-import EmberBeta from '../data/ember/beta';
-import EmberRelease from '../data/ember/release';
-import EmberLTS from '../data/ember/lts';
+import EmberTagged from '../fixtures/ember/tagged';
+import EmberCanary from '../fixtures/ember/canary';
+import EmberBeta from '../fixtures/ember/beta';
+import EmberRelease from '../fixtures/ember/release';
+import EmberLTS from '../fixtures/ember/lts';
 
-import EmberDataRelease from '../data/ember-data/release';
-import EmberDataTagged from '../data/ember-data/tagged';
-import EmberDataBeta from '../data/ember-data/beta';
-import EmberDataCanary from '../data/ember-data/canary';
+import EmberDataRelease from '../fixtures/ember-data/release';
+import EmberDataTagged from '../fixtures/ember-data/tagged';
+import EmberDataBeta from '../fixtures/ember-data/beta';
+import EmberDataCanary from '../fixtures/ember-data/canary';
 
 const Project = Ember.Object.extend();
 
