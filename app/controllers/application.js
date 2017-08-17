@@ -1,27 +1,28 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Controller from '@ember/controller';
 
-export default Ember.Controller.extend({
-  isIndexActive: Ember.computed('currentRouteName', function() {
+export default Controller.extend({
+  isIndexActive: computed('currentRouteName', function() {
     return this.isActiveChannel('index');
   }),
 
-  isTaggedActive: Ember.computed('currentRouteName', function() {
+  isTaggedActive: computed('currentRouteName', function() {
     return this.isActiveChannel('tagged');
   }),
 
-  isChannelsActive: Ember.computed('currentRouteName', function() {
+  isChannelsActive: computed('currentRouteName', function() {
     return !['index','tagged'].some(name => name === this.get('currentRouteName'));
   }),
 
-  isReleaseActive: Ember.computed('currentRouteName', function() {
+  isReleaseActive: computed('currentRouteName', function() {
     return this.isActiveChannel('release');
   }),
 
-  isBetaActive: Ember.computed('currentRouteName', function() {
+  isBetaActive: computed('currentRouteName', function() {
     return this.isActiveChannel('beta');
   }),
 
-  isCanaryActive: Ember.computed('currentRouteName', function() {
+  isCanaryActive: computed('currentRouteName', function() {
     return this.isActiveChannel('canary');
   }),
 

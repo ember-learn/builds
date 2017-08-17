@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import $ from 'jquery';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
     didInsertElement() {
-        Ember.$('.sk-cube-grid').hide();
+        $('.sk-cube-grid').hide();
     }
 });

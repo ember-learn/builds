@@ -1,8 +1,11 @@
-import Ember from 'ember';
+import $ from 'jquery';
+import { on } from '@ember/object/evented';
+import { A } from '@ember/array';
+import EmberObject, { computed, observer } from '@ember/object';
 import S3File from './s3-file';
 
 
-export default Ember.Object.extend({
+export default EmberObject.extend({
   files: [],
   isLoading: false,
 
@@ -14,46 +17,46 @@ export default Ember.Object.extend({
   bucket: 'builds.emberjs.com',
   endpoint: 's3.amazonaws.com',
 
-  delimiterParameter: Ember.computed('delimiter', function(){
+  delimiterParameter: computed('delimiter', function(){
     let delimiter = this.getWithDefault('delimiter','').toString();
     return (delimiter) ? 'delimiter=' + delimiter : '';
   }),
 
-  maxKeysParameter: Ember.computed('maxKeys', function(){
+  maxKeysParameter: computed('maxKeys', function(){
     return 'max-keys=' + this.getWithDefault('maxKeys','').toString();
   }),
 
-  prefixParameter: Ember.computed('prefix', function(){
+  prefixParameter: computed('prefix', function(){
     return 'prefix=' + this.getWithDefault('prefix','').toString();
   }),
 
-  queryProtocol: Ember.computed('queryUseSSL', function() {
+  queryProtocol: computed('queryUseSSL', function() {
     return this.get('queryUseSSL') ? 'https://' : 'http://';
   }),
 
-  queryBaseUrl: Ember.computed('queryProtocol', 'endpoint', 'bucket', function(){
+  queryBaseUrl: computed('queryProtocol', 'endpoint', 'bucket', function(){
     return this.get('queryProtocol') + this.get('endpoint') + '/' + this.get('bucket');
   }),
 
-  objectProtocol: Ember.computed('objectUseSSL', function() {
+  objectProtocol: computed('objectUseSSL', function() {
     return this.get('objectUseSSL') ? 'https://' : 'http://';
   }),
 
-  objectBaseUrl: Ember.computed('objectProtocol', 'bucket', function(){
+  objectBaseUrl: computed('objectProtocol', 'bucket', function(){
     return this.get('objectProtocol') + this.get('bucket');
   }),
 
-  queryParams: Ember.computed('delimiterParameter', 'maxKeysParameter', 'prefixParameter', function(){
+  queryParams: computed('delimiterParameter', 'maxKeysParameter', 'prefixParameter', function(){
     return this.get('delimiterParameter')  + '&' +
       this.get('maxKeysParameter')    + '&' +
       this.get('prefixParameter');
   }),
 
-  queryUrl: Ember.computed('queryBaseUrl', 'queryParams', function(){
+  queryUrl: computed('queryBaseUrl', 'queryParams', function(){
     return this.get('queryBaseUrl') + '?' + this.get('queryParams');
   }),
 
-  filesPresent: Ember.computed('files.[]', function(){
+  filesPresent: computed('files.[]', function(){
     return this.get('files').length;
   }),
 
@@ -62,14 +65,14 @@ export default Ember.Object.extend({
 
     return files.filter(function(e) {
       let name     = e.get('name');
-      let ignored  = Ember.A(ignoreFiles).any(f => name.indexOf(f) >= 0);
+      let ignored  = A(ignoreFiles).any(f => name.indexOf(f) >= 0);
       let selected = filter.any(f => name.match(f));
 
       return !ignored && selected;
     });
   },
 
-  load: Ember.on('init', Ember.observer('queryUrl', function() {
+  load: on('init', observer('queryUrl', function() {
     let self = this;
     this.set('isLoading', true);
 
@@ -85,7 +88,7 @@ export default Ember.Object.extend({
     let self = this;
     let baseUrl = this.get('objectBaseUrl');
 
-    return Ember.$.get(this.get('queryUrl') + '&marker=' + marker).then(function(data) {
+    return $.get(this.get('queryUrl') + '&marker=' + marker).then(function(data) {
       let contents = data.getElementsByTagName('Contents');
       let isTruncated = data.getElementsByTagName('IsTruncated')[0].firstChild.data === "true";
       let length = contents.length;

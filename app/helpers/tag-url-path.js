@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { helper } from '@ember/component/helper';
 
 export function tagUrlPath([url]/*, hash*/) {
   let pathIndex = url.indexOf('tags');
@@ -6,4 +6,4 @@ export function tagUrlPath([url]/*, hash*/) {
   return url.slice(pathIndex);
 }
 
-export default Ember.Helper.helper(tagUrlPath);
+export default helper(tagUrlPath);
