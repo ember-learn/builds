@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { later } from '@ember/runloop';
 import Component from 'ember-cli-clipboard/components/copy-button';
 import layout from 'ember-cli-clipboard/templates/components/copy-button';
 
@@ -14,7 +14,7 @@ export default Component.extend({
     this.set('loading', true);
     this.set('disabled', true);
 
-    Ember.run.later(this, () => {
+    later(this, () => {
       this.set('loading', false);
       this.set('disabled', false);
     }, 1000);

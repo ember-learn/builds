@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import { helper } from '@ember/component/helper';
 
 export function printf([template, value]/*, hash*/) {
   return template.replace(/%s/g, value);
 }
 
-export default Ember.Helper.helper(printf);
+export default helper(printf);

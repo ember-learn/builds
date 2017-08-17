@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
 
 import EmberTagged from '../fixtures/ember/tagged';
 import EmberCanary from '../fixtures/ember/canary';
@@ -11,7 +11,7 @@ import EmberDataTagged from '../fixtures/ember-data/tagged';
 import EmberDataBeta from '../fixtures/ember-data/beta';
 import EmberDataCanary from '../fixtures/ember-data/canary';
 
-const Project = Ember.Object.extend();
+const Project = EmberObject.extend();
 
 const FIXTURES = [
   EmberTagged,

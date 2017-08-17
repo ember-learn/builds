@@ -1,10 +1,11 @@
-import Ember from 'ember';
+import { hash } from 'rsvp';
+import Route from '@ember/routing/route';
 import Project from '../lib/project';
 import S3Bucket from '../lib/s3-bucket';
 
-export default Ember.Route.extend({
+export default Route.extend({
   model() {
-    return Ember.RSVP.hash({
+    return hash({
       releaseSteps: S3Bucket.create({
         title: 'Beta Builds',
         prefix: 'beta/'

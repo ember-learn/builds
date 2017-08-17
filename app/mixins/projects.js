@@ -1,8 +1,10 @@
-import Ember from 'ember';
+import { htmlSafe } from '@ember/string';
+import { computed } from '@ember/object';
+import Mixin from '@ember/object/mixin';
 import Project from '../lib/project';
 
-export default Ember.Mixin.create({
-  projects: Ember.computed('channel', 'model', 'model.files', 'model.releaseSteps', function() {
+export default Mixin.create({
+  projects: computed('channel', 'model', 'model.files', 'model.releaseSteps', function() {
     let projects = Project.find(this.get('channel'));
     let bucket = this.get('model');
 
@@ -66,7 +68,7 @@ export default Ember.Mixin.create({
       value = 'The builds listed below are based on the most recent development.';
     }
 
-    return new Ember.String.htmlSafe(value);
+    return new htmlSafe(value);
   },
 
   lastReleaseUrl(project, channel, lastRelease, extension) {

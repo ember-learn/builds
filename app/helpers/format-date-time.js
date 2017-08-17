@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { helper } from '@ember/component/helper';
 import moment from 'moment';
 
 export function formatDateTime([date, format]/*, hash*/) {
@@ -7,4 +7,4 @@ export function formatDateTime([date, format]/*, hash*/) {
   return moment(date).fromNow();
 }
 
-export default Ember.Helper.helper(formatDateTime);
+export default helper(formatDateTime);
