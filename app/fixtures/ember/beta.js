@@ -7,7 +7,7 @@ export default {
   futureVersion: "2.16.0-beta.2",
   finalVersion: '2.16.0',
   channel: "beta",
-  cycleEstimatedFinishDate: '2017-10-16',
+  cycleEstimatedFinishDate: '2017-10-09',
   date: "2017-08-31",
   nextDate: "2017-09-11",
   changelogPath: "CHANGELOG.md",
