@@ -20,6 +20,7 @@ Router.reopen({
 });
 
 Router.map(function() {
+  this.route('lts');
   this.route('release');
   this.route('beta');
   this.route('canary');
