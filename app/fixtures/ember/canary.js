@@ -7,5 +7,6 @@ export default {
   enableTestURL: true,
   debugFileName: ".debug.js",
   ignoreFiles: ['ember.js'],
-  installWithEmberCLI: '# Install the latest Ember canary:\nbower install --save ember#canary'
+  installWithEmberCLI: `# Install the latest Ember canary:
+npm install --save-dev <latest sha here>`
 };
