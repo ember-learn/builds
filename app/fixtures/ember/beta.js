@@ -5,7 +5,7 @@ export default {
   projectRepo: 'emberjs/ember.js',
   lastRelease: "2.17.0-beta.1",
   futureVersion: "2.17.0-beta.2",
-  finalVersion: '2.16.0',
+  finalVersion: '2.17.0',
   channel: "beta",
   cycleEstimatedFinishDate: '2017-11-20',
   date: "2017-10-03",
