@@ -6,7 +6,7 @@ export default {
   initialVersion: "2.16.0",
   initialReleaseDate: "2017-10-03",
   lastRelease: "2.16.3",
-  futureVersion: "2.12.4",
+  futureVersion: "2.16.4",
   channel: "lts",
   date: "2017-10-12",
   changelogPath: "CHANGELOG.md",
