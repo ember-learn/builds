@@ -1,7 +1,7 @@
 export default {
   projectName: "Ember",
   baseFileName: 'ember',
-  projectFilter: [ /ember\./, /ember-template-compiler/ ],
+  projectFilter: [/ember\./, /ember-template-compiler/],
   projectRepo: 'emberjs/ember.js',
   initialVersion: "2.16.0",
   initialReleaseDate: "2017-10-09",
