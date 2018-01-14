@@ -1,13 +1,15 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('ember-cli-usage', 'Integration | Component | ember cli usage', {
-  integration: true
-});
+module('Integration | Component | ember cli usage', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders nothing if project doesn\'t install with Ember CLI', function(assert) {
-  this.project = { installWithEmberCLI: false };
-  this.render(hbs`{{ember-cli-usage project=project}}`);
+  test('it renders nothing if project doesn\'t install with Ember CLI', async function(assert) {
+    this.project = { installWithEmberCLI: false };
+    await render(hbs`{{ember-cli-usage project=project}}`);
 
-  assert.equal(this.$().text().trim(), '');
+    assert.equal(this.$().text().trim(), '');
+  });
 });

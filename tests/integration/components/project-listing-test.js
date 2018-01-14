@@ -1,25 +1,26 @@
-import { moduleForComponent } from 'ember-qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
-import { skip } from 'qunit';
+import { module, skip } from 'qunit';
 
-moduleForComponent('project-listing', 'Integration | Component | project listing', {
-  integration: true
-});
+module('Integration | Component | project listing', function(hooks) {
+  setupRenderingTest(hooks);
 
-skip('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  skip('it renders', function(assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{project-listing}}`);
+    this.render(hbs`{{project-listing}}`);
 
-  assert.equal(this.$().text().trim(), '');
+    assert.equal(this.$().text().trim(), '');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#project-listing}}
-      template block text
-    {{/project-listing}}
-  `);
+    // Template block usage:
+    this.render(hbs`
+      {{#project-listing}}
+        template block text
+      {{/project-listing}}
+    `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
 });
