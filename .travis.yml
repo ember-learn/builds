@@ -4,9 +4,18 @@ node_js:
   - "6"
 
 sudo: false
+dist: trusty
+
+addons:
+  chrome: stable
 
 cache:
   yarn: true
+
+env:
+  global:
+    # See https://git.io/vdao3 for details.
+    - JOBS=1
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -19,7 +28,9 @@ install:
   - bower install
 
 script:
+  - yarn lint:js
   - yarn test
+
 deploy:
   skip_cleanup: true
   provider: script
