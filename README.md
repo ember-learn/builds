@@ -1,5 +1,7 @@
 # Builds
 
+[![Build Status](https://travis-ci.org/ember-learn/builds.svg?branch=master)](https://travis-ci.org/ember-learn/builds)
+
 This app is used for the Builds page at [http://emberjs.com/builds/](http://emberjs.com/builds/).
 
 ## Prerequisites
