@@ -1,25 +1,26 @@
-import { moduleForComponent } from 'ember-qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
-import { skip } from 'qunit';
+import { module, skip } from 'qunit';
 
-moduleForComponent('files-table', 'Integration | Component | files table', {
-  integration: true
-});
+module('Integration | Component | files table', function(hooks) {
+  setupRenderingTest(hooks);
 
-skip('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  skip('it renders', function(assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{files-table}}`);
+    this.render(hbs`{{files-table}}`);
 
-  assert.equal(this.$().text().trim(), '');
+    assert.equal(this.$().text().trim(), '');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#files-table}}
-      template block text
-    {{/files-table}}
-  `);
+    // Template block usage:
+    this.render(hbs`
+      {{#files-table}}
+        template block text
+      {{/files-table}}
+    `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
 });

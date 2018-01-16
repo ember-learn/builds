@@ -4,7 +4,7 @@ import Mixin from '@ember/object/mixin';
 import Project from '../lib/project';
 
 export default Mixin.create({
-  projects: computed('channel', 'model', 'model.files', 'model.releaseSteps', function() {
+  projects: computed('channel', 'model', 'model.{files,releaseSteps}', function() {
     let projects = Project.find(this.get('channel'));
     let bucket = this.get('model');
 

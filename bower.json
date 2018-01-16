@@ -1,9 +1,0 @@
-{
-  "name": "builds",
-  "dependencies": {
-    "pretender": "~0.10.1",
-    "lodash": "~3.7.0",
-    "Faker": "~3.0.0",
-    "zeroclipboard": "1.2.3"
-  }
-}

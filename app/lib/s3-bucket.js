@@ -1,12 +1,10 @@
 import $ from 'jquery';
-import { on } from '@ember/object/evented';
 import { A } from '@ember/array';
 import EmberObject, { computed, observer } from '@ember/object';
 import S3File from './s3-file';
 
 
 export default EmberObject.extend({
-  files: [],
   isLoading: false,
 
   // Setup these as default values.
@@ -60,6 +58,13 @@ export default EmberObject.extend({
     return this.get('files').length;
   }),
 
+  init() {
+    this._super(...arguments);
+    this.files = [];
+
+    this.load();
+  },
+
   filterFiles(filter, ignoreFiles){
     let files = this.get('files');
 
@@ -72,7 +77,7 @@ export default EmberObject.extend({
     });
   },
 
-  load: on('init', observer('queryUrl', function() {
+  load: observer('queryUrl', function() {
     let self = this;
     this.set('isLoading', true);
 
@@ -82,7 +87,7 @@ export default EmberObject.extend({
         return b.lastModified - a.lastModified;
       }));
     });
-  })),
+  }),
 
   loadAllPages(marker, files) {
     let self = this;
