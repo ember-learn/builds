@@ -4,7 +4,7 @@ import S3Bucket from '../lib/s3-bucket';
 export default Route.extend({
   model() {
     return S3Bucket.create({
-      title: 'Beta Builds',
+      title: 'Beta Channel',
       prefix: 'beta/'
     });
   }

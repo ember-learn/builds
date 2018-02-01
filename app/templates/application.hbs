@@ -9,7 +9,13 @@
         <li class="level-3 {{if isCanaryActive 'sub-selected'}}">{{#link-to 'canary'}}Canary{{/link-to}}</li>
       </ol>
     </li>
-    <li class="level-1 {{if isTaggedActive 'selected'}}">{{#link-to 'tagged'}}Prev. Releases{{/link-to}}</li>
+    <li class="level-1 {{if isTaggedActive 'selected'}}">
+      <a>Prev. Releases</a>
+
+      <ol style="display:block">
+        <li class="level-3 {{if isTaggedActive 'sub-selected'}}">{{#link-to 'tagged'}}Tagged Builds{{/link-to}}</li>
+      </ol>
+    </li>
   </ol>
 </div>
 
