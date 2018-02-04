@@ -14,5 +14,5 @@ export default {
   enableTestURL: true,
   debugFileName: ".debug.js",
   ignoreFiles: ['ember.js'],
-  installWithEmberCLI: '# Install Ember %s:\nbower install --save ember#v%s\n# Or, install the latest build of this channel which may include unreleased incremental changes:\nbower install --save ember#beta'
+  installWithEmberCLI: '# Install Ember %s:\nnpm install --save ember-source#v%s\n# Or, install the latest build of this channel which may include unreleased incremental changes:\nnpm install --save emberjs/ember.js#beta'
 };
