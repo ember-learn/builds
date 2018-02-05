@@ -33,17 +33,16 @@ export default Mixin.create({
         }
       }
 
-      project.files = bucket.filterFiles(project.projectFilter, project.ignoreFiles);
       project.description = this.description(project);
-      project.lastReleaseDebugUrl = this.lastReleaseUrl(project.baseFileName, project.channel, project.lastRelease, project.debugFileName);
-      project.lastReleaseProdUrl  = this.lastReleaseUrl(project.baseFileName, project.channel, project.lastRelease, '.prod.js');
-      project.lastReleaseMinUrl   = this.lastReleaseUrl(project.baseFileName, project.channel, project.lastRelease, '.min.js');
 
       if (project.enableTestURL) {
         project.lastReleaseTestUrl  = this.lastReleaseUrl(project.baseFileName, project.channel, project.lastRelease, '-tests-index.html');
       }
 
       if (project.channel === 'canary') {
+        if(project.projectName === 'Ember') {
+          project.installWithEmberCLI = this.get('installWithEmberCLI');
+        }
         project.lastRelease = 'latest';
       } else if (project.changelog !== 'false') {
         project.lastReleaseChangelogUrl   = `https://github.com/${project.projectRepo}/blob/v${project.lastRelease}/${project.changelogPath}` ;

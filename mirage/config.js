@@ -73,6 +73,7 @@ export default function() {
 
   */
   this.passthrough('https://s3.amazonaws.com/**');
+  this.passthrough('http://builds.emberjs.com/**');
 }
 
 /*
