@@ -6,11 +6,6 @@ import Project from '../lib/project';
 export default Mixin.create({
   projects: computed('channel', 'model', 'model.{files,releaseSteps}', function() {
     let projects = Project.find(this.get('channel'));
-    let bucket = this.get('model');
-
-    if (this.isIndexController) {
-      bucket = this.get('model.releaseSteps');
-    }
 
     projects.forEach((project) => {
       if (project.channel === 'beta') {
