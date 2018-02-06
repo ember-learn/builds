@@ -5,5 +5,7 @@ export default {
   projectRepo: 'emberjs/data',
   channel: "canary",
   debugFileName: ".js",
-  installWithEmberCLI: '# Install the latest Ember-Data canary:\nnpm install --save-dev emberjs/data#master'
+  installWithEmberCLI:
+`# Install the latest Ember-Data canary:
+npm install --save-dev emberjs/data#master`
 };
