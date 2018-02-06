@@ -4,7 +4,6 @@ export default {
   projectFilter: [/ember\./, /ember-template-compiler/],
   projectRepo: 'emberjs/ember.js',
   channel: "canary",
-  enableTestURL: true,
   debugFileName: ".debug.js",
   ignoreFiles: ['ember.js']
 };

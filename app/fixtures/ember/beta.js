@@ -11,7 +11,6 @@ export default {
   date: "2018-01-01",
   nextDate: "2018-01-22",
   changelogPath: "CHANGELOG.md",
-  enableTestURL: true,
   debugFileName: ".debug.js",
   ignoreFiles: ['ember.js'],
   installWithEmberCLI:

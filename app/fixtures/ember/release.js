@@ -10,7 +10,6 @@ export default {
   channel: "release",
   date: "2018-01-01",
   changelogPath: "CHANGELOG.md",
-  enableTestURL: true,
   debugFileName: ".debug.js",
   ignoreFiles: ['ember.js'],
   installWithEmberCLI:

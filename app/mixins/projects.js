@@ -29,10 +29,6 @@ export default Mixin.create({
 
       project.description = this.description(project);
 
-      if (project.enableTestURL) {
-        project.lastReleaseTestUrl  = this.lastReleaseUrl(project.baseFileName, project.channel, project.lastRelease, '-tests-index.html');
-      }
-
       if (project.channel === 'canary') {
         if(project.projectName === 'Ember') {
           project.installWithEmberCLI = this.get('installWithEmberCLI');
