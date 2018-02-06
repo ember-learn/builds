@@ -5,9 +5,6 @@
     {{#if project.lastReleaseChangelogUrl}}
       <p>
         Read the <a class="debug" href={{project.lastReleaseChangelogUrl}}>changelog</a>
-        {{~#if project.lastReleaseTestUrl}}
-          or <a class="debug" href={{project.lastReleaseTestUrl}} target="_blank">run the tests</a>
-        {{~/if}}
         for {{project.projectName}} {{project.lastRelease}}.
       </p>
     {{else if project.lastReleaseTestUrl}}

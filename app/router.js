@@ -23,7 +23,6 @@ Router.map(function() {
   this.route('release');
   this.route('beta');
   this.route('canary');
-  this.route('tagged');
 });
 
 export default Router;

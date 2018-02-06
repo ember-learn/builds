@@ -1,21 +1,17 @@
 import EmberObject from '@ember/object';
 
-import EmberTagged from '../fixtures/ember/tagged';
 import EmberCanary from '../fixtures/ember/canary';
 import EmberBeta from '../fixtures/ember/beta';
 import EmberRelease from '../fixtures/ember/release';
 import EmberLTS from '../fixtures/ember/lts';
 
 import EmberDataRelease from '../fixtures/ember-data/release';
-import EmberDataTagged from '../fixtures/ember-data/tagged';
 import EmberDataBeta from '../fixtures/ember-data/beta';
 import EmberDataCanary from '../fixtures/ember-data/canary';
 
 const Project = EmberObject.extend();
 
 const FIXTURES = [
-  EmberTagged,
-  EmberDataTagged,
   EmberLTS,
   EmberRelease,
   EmberBeta,

@@ -10,8 +10,10 @@ export default {
   channel: "lts",
   date: "2017-11-01",
   changelogPath: "CHANGELOG.md",
-  enableTestURL: true,
   debugFileName: ".debug.js",
   ignoreFiles: ['ember.js'],
-  installWithEmberCLI: '# Install Ember %s:\nbower install --save ember#v%s\n# Or, install the latest build of this channel which may include unreleased incremental changes:\nbower install --save ember#release'
+  installWithEmberCLI:
+`# Install Ember %s:
+npm install --save-dev ember-source@~%s
+`
 };
