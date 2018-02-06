@@ -21,7 +21,6 @@ export default Mixin.create({
 
         let release = Project.find('release', project.projectName)[0];
 
-        // no releases exist for ember-data (yet)
         if (release) {
           project.lastStableVersion = release.initialVersion;
           project.lastStableDate = release.initialReleaseDate;
