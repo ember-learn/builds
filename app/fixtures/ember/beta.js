@@ -14,8 +14,8 @@ export default {
   enableTestURL: true,
   debugFileName: ".debug.js",
   ignoreFiles: ['ember.js'],
-  installWithEmberCLI: `
-# Install Ember %s:
+  installWithEmberCLI:
+`# Install Ember %s:
 npm install --save-dev ember-source@~%s
 `
 };

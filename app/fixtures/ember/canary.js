@@ -6,7 +6,5 @@ export default {
   channel: "canary",
   enableTestURL: true,
   debugFileName: ".debug.js",
-  ignoreFiles: ['ember.js'],
-  installWithEmberCLI: `# Install the latest Ember canary:
-npm install --save-dev <latest sha here>`
+  ignoreFiles: ['ember.js']
 };
