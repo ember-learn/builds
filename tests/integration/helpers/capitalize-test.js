@@ -1,7 +1,7 @@
-
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
+import { find } from 'ember-native-dom-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('helper:capitalize', function(hooks) {
@@ -13,7 +13,7 @@ module('helper:capitalize', function(hooks) {
 
     await render(hbs`{{capitalize inputValue}}`);
 
-    assert.equal(this.$().text().trim(), '1234');
+    assert.equal(find('*').textContent.trim(), '1234');
   });
 });
 

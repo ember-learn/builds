@@ -1,8 +1,10 @@
-import $ from 'jquery';
 import Component from '@ember/component';
 
 export default Component.extend({
-    didInsertElement() {
-        $('.sk-cube-grid').hide();
+  didInsertElement() {
+    const spinner = document.querySelector('.sk-cube-grid');
+    if (spinner) {
+      spinner.style.display = 'none';
     }
+  }
 });

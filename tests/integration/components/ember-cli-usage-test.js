@@ -1,6 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
+import { find } from 'ember-native-dom-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | ember cli usage', function(hooks) {
@@ -10,6 +11,6 @@ module('Integration | Component | ember cli usage', function(hooks) {
     this.project = { installWithEmberCLI: false };
     await render(hbs`{{ember-cli-usage project=project}}`);
 
-    assert.equal(this.$().text().trim(), '');
+    assert.equal(find('*').textContent.trim(), '');
   });
 });

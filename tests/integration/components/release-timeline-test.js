@@ -1,26 +1,27 @@
 import { setupRenderingTest } from 'ember-qunit';
-import '@ember/test-helpers';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+import { find } from 'ember-native-dom-helpers';
 import { module, skip } from 'qunit';
 
 module('Integration | Component | release timeline', function(hooks) {
   setupRenderingTest(hooks);
 
-  skip('it renders', function(assert) {
+  skip('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.on('myAction', function(val) { ... });
 
-    this.render(hbs`{{release-timeline}}`);
+    await render(hbs`{{release-timeline}}`);
 
-    assert.equal(this.$().text().trim(), '');
+    assert.equal(find('*').textContent.trim(), '');
 
     // Template block usage:
-    this.render(hbs`
+    await render(hbs`
       {{#release-timeline}}
         template block text
       {{/release-timeline}}
     `);
 
-    assert.equal(this.$().text().trim(), 'template block text');
+    assert.equal(find('*').textContent.trim(), 'template block text');
   });
 });

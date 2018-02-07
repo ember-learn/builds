@@ -46,6 +46,8 @@
     "ember-load-initializers": "^1.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-moment": "^7.5.0",
+    "ember-native-dom-event-dispatcher": "^0.6.4",
+    "ember-native-dom-helpers": "^0.5.10",
     "ember-resolver": "^4.4.0",
     "ember-source": "~2.18.0",
     "eslint-plugin-ember": "^5.0.0",
