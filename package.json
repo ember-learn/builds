@@ -46,10 +46,8 @@
     "ember-load-initializers": "^1.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-moment": "^7.5.0",
-    "ember-native-dom-event-dispatcher": "^0.6.4",
-    "ember-native-dom-helpers": "^0.5.10",
     "ember-resolver": "^4.4.0",
-    "ember-source": "~2.18.0",
+    "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/6f92209039f4f9a2c08c5642a02a4e598f3702cd.tgz",
     "eslint-plugin-ember": "^5.0.0",
     "loader.js": "^4.2.3"
   },

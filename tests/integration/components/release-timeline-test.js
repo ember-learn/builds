@@ -1,7 +1,6 @@
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
-import { find } from 'ember-native-dom-helpers';
 import { module, skip } from 'qunit';
 
 module('Integration | Component | release timeline', function(hooks) {
@@ -13,7 +12,7 @@ module('Integration | Component | release timeline', function(hooks) {
 
     await render(hbs`{{release-timeline}}`);
 
-    assert.equal(find('*').textContent.trim(), '');
+    assert.equal(this.element.textContent.trim(), '');
 
     // Template block usage:
     await render(hbs`
@@ -22,6 +21,6 @@ module('Integration | Component | release timeline', function(hooks) {
       {{/release-timeline}}
     `);
 
-    assert.equal(find('*').textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

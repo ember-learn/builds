@@ -1,6 +1,5 @@
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
-import { find } from 'ember-native-dom-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import { module, skip } from 'qunit';
 
@@ -13,7 +12,7 @@ module('Integration | Component | project listing', function(hooks) {
 
     await render(hbs`{{project-listing}}`);
 
-    assert.equal(find('*').textContent.trim(), '');
+    assert.equal(this.element.textContent.trim(), '');
 
     // Template block usage:
     await render(hbs`
@@ -22,6 +21,6 @@ module('Integration | Component | project listing', function(hooks) {
       {{/project-listing}}
     `);
 
-    assert.equal(find('*').textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
