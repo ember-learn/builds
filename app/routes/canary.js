@@ -10,7 +10,7 @@ export default Route.extend({
 
   setupController(controller, model){
     const installWithEmberCLI = `# Install the latest Ember canary:
-npm install --save-dev https://s3.amazonaws.com/builds.emberjs.com/${model.assetPath}`;
+npm install --save-dev https://s3.amazonaws.com/builds.emberjs.com${model.assetPath}`;
 
     controller.set('installWithEmberCLI', installWithEmberCLI)
   }
