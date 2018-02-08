@@ -12,7 +12,7 @@ module('Integration | Component | remove spinner', function(hooks) {
 
     await render(hbs`{{remove-spinner}}`);
 
-    assert.equal(this.$().text().trim(), '');
+    assert.equal(this.element.textContent.trim(), '');
 
     // Template block usage:
     await render(hbs`
@@ -21,6 +21,6 @@ module('Integration | Component | remove spinner', function(hooks) {
       {{/remove-spinner}}
     `);
 
-    assert.equal(this.$().text().trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
