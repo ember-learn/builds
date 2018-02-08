@@ -3,9 +3,9 @@
         <div class="canary" title="Canary Builds"></div>
       {{/link-to}}
       <div class="description">
-        <h3>
+        <h2 class="text-left">
           {{#link-to 'canary'}}Canary{{/link-to}}
-        </h3>
+        </h2>
         <p>Canary builds are the bleeding edge of Ember development. Please do
         not use these builds unless you want to try out and offer
         feedback on new features and fixes not available in the Release or
@@ -17,9 +17,9 @@
         <div class="beta" title="Beta Builds"></div>
       {{/link-to}}
       <div class="description">
-        <h3>
+        <h2 class="text-left">
           {{#link-to 'beta'}}Beta{{/link-to}}
-        </h3>
+        </h2>
         <p>
         <em>The latest beta release is {{model.beta.lastRelease}}, made
           {{format-date-time model.beta.date}}</em>
@@ -35,9 +35,9 @@
         <div class="release" title="Release Builds"></div>
       {{/link-to}}
       <div class="description">
-        <h3>
+        <h2 class="text-left">
           {{#link-to 'release'}}Release{{/link-to}}
-        </h3>
+        </h2>
         <p>
         <em>The latest stable release is {{model.release.lastRelease}}, made
           on {{format-date-time model.release.date 'MMMM Do, YYYY'}}</em>
@@ -53,7 +53,7 @@
         <div class="lts" title="LTS Builds"></div>
       </a>
       <div class="description last">
-        <h3>Long-Term Support (LTS)</h3>
+        <h2 class="text-left">Long-Term Support (LTS)</h2>
         <p>
           <em>The latest LTS release is {{model.lts.lastRelease}}, made on
             {{format-date-time model.lts.date 'MMMM Do, YYYY'}}</em>
