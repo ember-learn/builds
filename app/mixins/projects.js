@@ -5,7 +5,7 @@ import Project from '../lib/project';
 
 export default Mixin.create({
   projects: computed('channel', 'model', 'model.{files,releaseSteps}', function() {
-    let projects = Project.find(this.get('channel'));
+    let projects = Project.find(this.channel);
 
     projects.forEach((project) => {
       if (project.channel === 'beta') {
@@ -31,7 +31,7 @@ export default Mixin.create({
 
       if (project.channel === 'canary') {
         if(project.projectName === 'Ember') {
-          project.installWithEmberCLI = this.get('installWithEmberCLI');
+          project.installWithEmberCLI = this.installWithEmberCLI;
         }
         project.lastRelease = 'latest';
       } else if (project.changelog !== 'false') {
@@ -47,7 +47,7 @@ export default Mixin.create({
     let futureVersion = project.futureVersion;
     let value;
 
-    if (this.get('channel') === 'tagged') {
+    if (this.channel === 'tagged') {
       value = '';
     } else if (lastRelease) {
       value = `The builds listed below are incremental improvements made since ${lastRelease} and may become ${futureVersion}.`;
