@@ -10,7 +10,7 @@ Router.reopen({
   didTransition() {
     this._super();
 
-    let url = this.get('url');
+    let url = this.url;
 
     // Add a slash if neccesary
     if (!/^\//.test(url)){ url = '/' + url; }

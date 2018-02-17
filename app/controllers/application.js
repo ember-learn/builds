@@ -11,7 +11,7 @@ export default Controller.extend({
   }),
 
   isChannelsActive: computed('currentRouteName', function() {
-    return !['index','tagged'].some(name => name === this.get('currentRouteName'));
+    return !['index','tagged'].some(name => name === this.currentRouteName);
   }),
 
   isReleaseActive: computed('currentRouteName', function() {
@@ -27,6 +27,6 @@ export default Controller.extend({
   }),
 
   isActiveChannel(channel) {
-    return this.get('currentRouteName').includes(channel);
+    return this.currentRouteName.includes(channel);
   }
 });
