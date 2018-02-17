@@ -58,13 +58,5 @@ export default Mixin.create({
     }
 
     return new htmlSafe(value);
-  },
-
-  lastReleaseUrl(project, channel, lastRelease, extension) {
-    if (channel === 'canary') {
-      return `http://builds.emberjs.com/canary/${project}${extension}`;
-    } else {
-      return `http://builds.emberjs.com/tags/v${lastRelease}/${project}${extension}`;
-    }
   }
 });
