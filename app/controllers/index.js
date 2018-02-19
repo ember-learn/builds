@@ -5,7 +5,6 @@ import ProjectsMixin from '../mixins/projects';
 export default Controller.extend(ProjectsMixin, {
   isIndexController: true,
   channel: 'beta',
-  includeReleasesInFileList: true,
   channelDescription: 'Releases are production-ready versions of Ember and Ember Data that have been through a six-week beta cycle.',
 
   latestVersionOfDocs: computed('model.release.lastRelease', function() {
