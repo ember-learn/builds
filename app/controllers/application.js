@@ -4,9 +4,10 @@ import { inject as service } from "@ember/service";
 
 export default Controller.extend({
   router: service(),
+  links: Object.freeze([]),
 
-  isIndexActive: computed("router.currentRouteName", function() {
-    return this.isActiveChannel("index");
+  isIndexActive: computed('router.currentRouteName', function() {
+    return this.isActiveChannel('index');
   }),
 
   isTaggedActive: computed("router.currentRouteName", function() {
