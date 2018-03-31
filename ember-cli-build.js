@@ -4,7 +4,10 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    vendorFiles: { 'jquery.js': null }
+    vendorFiles: { 'jquery.js': null },
+    'ember-cli-babel': {
+      includePolyfill: true,
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
