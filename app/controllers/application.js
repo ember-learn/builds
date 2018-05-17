@@ -1,32 +1,35 @@
-import { computed } from '@ember/object';
-import Controller from '@ember/controller';
+import { computed } from "@ember/object";
+import Controller from "@ember/controller";
+import { inject as service } from "@ember/service";
 
 export default Controller.extend({
-  isIndexActive: computed('currentRouteName', function() {
-    return this.isActiveChannel('index');
+  router: service(),
+
+  isIndexActive: computed("router.currentRouteName", function() {
+    return this.isActiveChannel("index");
   }),
 
-  isTaggedActive: computed('currentRouteName', function() {
-    return this.isActiveChannel('tagged');
+  isTaggedActive: computed("router.currentRouteName", function() {
+    return this.isActiveChannel("tagged");
   }),
 
-  isChannelsActive: computed('currentRouteName', function() {
-    return !['index','tagged'].some(name => name === this.currentRouteName);
+  isChannelsActive: computed("router.currentRouteName", function() {
+    return !["index", "tagged"].some(name => name === this.currentRouteName);
   }),
 
-  isReleaseActive: computed('currentRouteName', function() {
-    return this.isActiveChannel('release');
+  isReleaseActive: computed("router.currentRouteName", function() {
+    return this.isActiveChannel("release");
   }),
 
-  isBetaActive: computed('currentRouteName', function() {
-    return this.isActiveChannel('beta');
+  isBetaActive: computed("router.currentRouteName", function() {
+    return this.isActiveChannel("beta");
   }),
 
-  isCanaryActive: computed('currentRouteName', function() {
-    return this.isActiveChannel('canary');
+  isCanaryActive: computed("router.currentRouteName", function() {
+    return this.isActiveChannel("canary");
   }),
 
   isActiveChannel(channel) {
-    return this.currentRouteName.includes(channel);
+    return this.route.currentRouteName.includes(channel);
   }
 });
