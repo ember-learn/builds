@@ -9,8 +9,6 @@ export default Controller.extend(ProjectsMixin, {
 
   installWithEmberCLI: computed("model.assetPath", function() {
     return `# Install the latest Ember canary:
-npm install --save-dev https://s3.amazonaws.com/builds.emberjs.com${
-      this.model.assetPath
-    }`;
+npm install --save-dev https://s3.amazonaws.com/builds.emberjs.com${this.model.assetPath}`;
   })
 });
