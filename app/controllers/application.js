@@ -30,6 +30,6 @@ export default Controller.extend({
   }),
 
   isActiveChannel(channel) {
-    return this.route.currentRouteName.includes(channel);
+    return this.router.currentRouteName.includes(channel);
   }
 });
