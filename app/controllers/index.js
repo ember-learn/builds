@@ -15,6 +15,6 @@ export default Controller.extend(ProjectsMixin, {
   }),
 
   emberBetaProject: computed('projects.@each.isEmberBeta', function() {
-    return this.projects.find(p => p.isEmberBeta);
+    return this.get('projects').find(p => p.isEmberBeta);
   })
 });

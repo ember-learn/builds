@@ -1,6 +1,7 @@
 import { hash } from 'rsvp';
 import Route from '@ember/routing/route';
 import Project from '../lib/project';
+import navbar from '../data/links';
 
 export default Route.extend({
   model() {
@@ -8,7 +9,8 @@ export default Route.extend({
       release: Project.findOne('release', 'Ember'),
       beta: Project.findOne('beta', 'Ember'),
       canary: Project.findOne('canary', 'Ember'),
-      lts: Project.findOne('lts', 'Ember')
+      lts: Project.findOne('lts', 'Ember'),
+      navbar
     });
   }
 });
