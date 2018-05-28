@@ -44,7 +44,7 @@
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-maybe-import-regenerator-for-testing": "^1.0.0",
     "ember-moment": "^7.5.0",
-    "ember-resolver": "^4.4.0",
+    "ember-resolver": "^4.5.5",
     "ember-source": "~3.1.0",
     "eslint-plugin-ember": "^5.0.0",
     "loader.js": "^4.2.3"
