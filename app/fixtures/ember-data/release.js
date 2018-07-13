@@ -3,10 +3,10 @@ export default {
   baseFileName: 'ember-data',
   projectFilter: [/ember-data\./],
   projectRepo: 'emberjs/data',
-  lastRelease: "3.1.1",
-  futureVersion: "3.1.2",
+  lastRelease: "3.3.0",
+  futureVersion: "3.3.1",
   channel: "release",
-  date: "2018-03-27",
+  date: "2018-07-13",
   changelogPath: "CHANGELOG.md",
   debugFileName: ".js",
   installWithEmberCLI:
