@@ -46,7 +46,7 @@
     "ember-moment": "^7.8.0",
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.5.1",
-    "eslint-plugin-ember": "^5.2.0",
+    "eslint-plugin-ember": "^5.4.0",
     "loader.js": "^4.7.0"
   },
   "engines": {
