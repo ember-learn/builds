@@ -4,7 +4,7 @@ export default {
   projectFilter: [/ember\./, /ember-template-compiler/],
   projectRepo: 'emberjs/ember.js',
   initialVersion: "2.18.0",
-  initialReleaseDate: "2018-08-27",
+  initialReleaseDate: "2018-01-01",
   lastRelease: "3.4.0",
   futureVersion: "3.5.0",
   channel: "lts",
