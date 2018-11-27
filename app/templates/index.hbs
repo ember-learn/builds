@@ -12,11 +12,91 @@
 {{release-timeline project=emberBetaProject}}
 
 <p>
-  Ember releases follow a "train" release model. Every
+  Ember releases follow a "train" release model. About every
   six weeks, the <code>master</code> branch of Ember (sometimes referred to as
   "canary") branches to become the new beta. After six weeks as a beta, this
-  version becomes the new stable release of Ember.
+  version becomes the new stable release of Ember. 
 </p>
+<p>
+  A release of a new Ember version is only considered complete when a
+  <a href="https://emberjs.com/blog/tags/releases.html">
+    release blog post
+  </a>
+  is published. Since multiple libraries make up a release,
+  including `ember.js`, `ember-data`, `ember-cli`, and documentation,  
+  the release occurs in steps throughout a week-long window.
+  Developers are encouraged to monitor the release blog posts for
+  the official announcement before upgrading their apps.
+  Release dates may shift as needed, but developers can expect roughly
+  eight minor releases per year.
+</p>
+
+<p>
+  LTS (Long Term Support) releases are done at least every four minor versions,
+  plus the last version before a new major release. An LTS release receives security
+  updates for 9 release cycles (54 weeks) and bugfixes for 5 release cycles 
+  (30 weeks).
+</p>
+
+<table class="lts-schedule">
+  <thead>
+    <tr>
+      <th colspan="4">
+        LTS Support Schedule
+      </th>
+    </tr>
+    <tr>
+      <td>LTS Version</td>
+      <td>Released</td>
+      <td>Bugfixes until:</td>
+      <td>Security patches until:</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        3.4
+      </td>
+      <td>
+        Oct 2018
+      </td>
+      <td>
+        May 2019
+      </td>
+      <td>
+        Oct 2019
+      </td>
+    </tr>
+    <tr>
+      <td>
+        2.18
+      </td>
+      <td>
+        Feb 2018
+      </td>
+      <td>
+        Sept 2018
+      </td>
+      <td>
+        Feb 2019
+      </td>
+    </tr>
+    <tr>
+      <td>
+        2.16
+      </td>
+      <td>
+        Oct 2017
+      </td>
+      <td>
+        May 2018
+      </td>
+      <td>
+        Dec 2018
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 <p>
   The Ember project adheres to
