@@ -12,15 +12,23 @@
 {{release-timeline project=emberBetaProject}}
 
 <p>
-  Ember releases follow a "train" release model. Every
+  Ember releases follow a "train" release model. About every
   six weeks, the <code>master</code> branch of Ember (sometimes referred to as
   "canary") branches to become the new beta. After six weeks as a beta, this
-  version becomes the new stable release of Ember.
+  version becomes the new stable release of Ember. 
+</p>
+<p>
+  A release of a new Ember version is considered complete when a
+  <a href="https://emberjs.com/blog/tags/releases.html">
+    release blog post
+  </a>
+  is published. Since multiple libraries make up a release needed, 
+  there is a one-week window for the work to be done.
 </p>
 
 <p>
-  LTS (Long Term Support) releases are done every four minor versions, plus the
-  first and last releases of major versions. An LTS release receives security
+  LTS (Long Term Support) releases are done at least every four minor versions,
+  plus the last version before a new major release. An LTS release receives security
   updates for 9 release cycles (54 weeks) and bugfixes for 5 release cycles 
   (30 weeks).
 </p>
@@ -133,8 +141,9 @@
         {{#link-to 'beta'}}Beta{{/link-to}}
       </h3>
       <p>
-      <em>The latest beta release is {{model.beta.lastRelease}}, made
-        {{format-date-time model.beta.date}}</em>
+      {{!-- Put this back when it is data-driven and not hard coded --}}
+      {{!-- <em>The latest beta release is {{model.beta.lastRelease}}, made
+        {{format-date-time model.beta.date}}</em> --}}
       </p>
       <p>
         Beta builds incorporate new features that are ready for evaluation in
@@ -151,8 +160,9 @@
         {{#link-to 'release'}}Release{{/link-to}}
       </h3>
       <p>
-      <em>The latest stable release is {{model.release.lastRelease}}, made
-        on {{format-date-time model.release.date 'MMMM Do, YYYY'}}</em>
+      {{!-- Put this back when it is data-driven and not hard coded --}}
+      {{!-- <em>The latest stable release is {{model.release.lastRelease}}, made
+        on {{format-date-time model.release.date 'MMMM Do, YYYY'}}</em> --}}
       </p>
       <p>
         Release builds have been hardened through our multi-tiered release
