@@ -6,7 +6,7 @@ export default {
   lastRelease: "3.5.1",
   futureVersion: "3.5.2",
   channel: "release",
-  date: "2018-11-29",
+  date: "2018-11-28",
   changelogPath: "CHANGELOG.md",
   debugFileName: ".js",
   installWithEmberCLI:
