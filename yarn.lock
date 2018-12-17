@@ -3561,9 +3561,9 @@ escodegen@^1.9.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-plugin-ember@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-6.0.1.tgz#0d10a1c4d0f148005d8b2c2eec80a12ea236c792"
+eslint-plugin-ember@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-6.1.0.tgz#dc48e342daca632b628766df08b634d5a5a970e6"
   dependencies:
     ember-rfc176-data "^0.3.5"
     snake-case "^2.1.0"
