@@ -12,7 +12,7 @@
   "repository": "",
   "scripts": {
     "build": "ember build",
-    "lint:js": "eslint ./*.js app blueprints config lib server tests",
+    "lint:js": "eslint .",
     "start": "ember serve",
     "test": "ember test"
   },
@@ -30,7 +30,7 @@
     "ember-cli-deploy-revision-data": "^1.0.0",
     "ember-cli-deploy-s3": "^1.4.0",
     "ember-cli-deploy-s3-index": "^1.0.1",
-    "ember-cli-eslint": "^4.2.3",
+    "ember-cli-eslint": "^5.0.0",
     "ember-cli-htmlbars": "^3.0.1",
     "ember-cli-htmlbars-inline-precompile": "^2.1.0",
     "ember-cli-inject-live-reload": "^2.0.1",
