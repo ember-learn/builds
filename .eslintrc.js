@@ -15,12 +15,13 @@ module.exports = {
     browser: true
   },
   rules: {
-    'ember/no-jquery': 'error'
   },
   overrides: [
     // node files
     {
       files: [
+        '.eslintrc.js',
+        '.template-lintrc.js',
         'ember-cli-build.js',
         'testem.js',
         'blueprints/*/index.js',
