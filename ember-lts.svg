@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="500"><defs><style type="text/css"><![CDATA[ 
+.current {
+  fill: #2aa748;
+}
+.active {
+  fill: #47b4ff;
+}
+.maintenance {
+  fill: #89a19d;
+}
+.unstable {
+  fill: #ffb800;
+}
+.bar-join {
+  fill: #ffffff;
+}
+.bar-join.unstable, .bar-join.current {
+  display: none;
+}
+.tick text {
+  font: 16px sans-serif;
+  fill: #89a19d;
+}
+.axis--y .tick text {
+  text-anchor: end;
+}
+.label {
+  fill: #fff;
+  font: 20px sans-serif;
+  font-weight: 100;
+  text-anchor: start;
+  dominant-baseline: middle;
+  text-transform: uppercase;
+} ]]></style></defs><g id="bar-container" transform="translate(110, 30)"><g class="axis axis--x" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><g class="tick" opacity="1" transform="translate(0,0)"><line stroke="#89a19d" y2="440" x1="0.5" x2="0.5"></line><text fill="#000" y="0" x="0.5" dy="-10">Jan 2018</text></g><g class="tick" opacity="1" transform="translate(99.046391901823,0)"><line stroke="#89a19d" y2="440" x1="0.5" x2="0.5" stroke-dasharray="2,2"></line><text fill="#000" y="0" x="0.5" dy="-10">Apr 2018</text></g><g class="tick" opacity="1" transform="translate(199.23968505308812,0)"><line stroke="#89a19d" y2="440" x1="0.5" x2="0.5"></line><text fill="#000" y="0" x="0.5" dy="-10">Jul 2018</text></g><g class="tick" opacity="1" transform="translate(300.53400340381774,0)"><line stroke="#89a19d" y2="440" x1="0.5" x2="0.5" stroke-dasharray="2,2"></line><text fill="#000" y="0" x="0.5" dy="-10">Oct 2018</text></g><g class="tick" opacity="1" transform="translate(401.874197804525,0)"><line stroke="#89a19d" y2="440" x1="0.5" x2="0.5"></line><text fill="#000" y="0" x="0.5" dy="-10">Jan 2019</text></g><g class="tick" opacity="1" transform="translate(500.920589706348,0)"><line stroke="#89a19d" y2="440" x1="0.5" x2="0.5" stroke-dasharray="2,2"></line><text fill="#000" y="0" x="0.5" dy="-10">Apr 2019</text></g><g class="tick" opacity="1" transform="translate(601.1138828576131,0)"><line stroke="#89a19d" y2="440" x1="0.5" x2="0.5"></line><text fill="#000" y="0" x="0.5" dy="-10">Jul 2019</text></g><g class="tick" opacity="1" transform="translate(702.4082012083428,0)"><line stroke="#89a19d" y2="440" x1="0.5" x2="0.5" stroke-dasharray="2,2"></line><text fill="#000" y="0" x="0.5" dy="-10">Oct 2019</text></g><g class="tick" opacity="1" transform="translate(803.74839560905,0)"><line stroke="#89a19d" y2="440" x1="0.5" x2="0.5"></line><text fill="#000" y="0" x="0.5" dy="-10">Jan 2020</text></g></g><g class="axis axis--y" fill="none" font-size="10" font-family="sans-serif" text-anchor="start"><g class="tick" opacity="1" transform="translate(0,53.96226415094337)"><line stroke="#e1e7e7" x2="820" y1="0.5" y2="0.5"></line><text fill="#000" x="0" y="0.5" dy="0.32em" dx="-10">Ember.js 2.12</text></g><g class="tick" opacity="1" transform="translate(0,136.98113207547166)"><line stroke="#e1e7e7" x2="820" y1="0.5" y2="0.5"></line><text fill="#000" x="0" y="0.5" dy="0.32em" dx="-10">Ember.js 2.16</text></g><g class="tick" opacity="1" transform="translate(0,219.99999999999997)"><line stroke="#e1e7e7" x2="820" y1="0.5" y2="0.5"></line><text fill="#000" x="0" y="0.5" dy="0.32em" dx="-10">Ember.js 2.18</text></g><g class="tick" opacity="1" transform="translate(0,303.0188679245283)"><line stroke="#e1e7e7" x2="820" y1="0.5" y2="0.5"></line><text fill="#000" x="0" y="0.5" dy="0.32em" dx="-10">Ember.js 3.4</text></g><g class="tick" opacity="1" transform="translate(0,386.0377358490566)"><line stroke="#e1e7e7" x2="820" y1="0.5" y2="0.5"></line><text fill="#000" x="0" y="0.5" dy="0.32em" dx="-10">Ember.js 3.8</text></g><line y1="440" y2="440" x2="820" stroke="#89a19d"></line></g><g><rect class="bar active" x="0" y="24.90566037735846" width="48.44510877643589" height="58.113207547169814"></rect><rect class="bar-join active" x="-1" y="24.90566037735846" width="2" height="58.113207547169814" style="opacity: 0;"></rect><text class="label" x="15" y="55.96226415094337" style="opacity: 0;">active</text></g><g><rect class="bar active" x="0" y="107.92452830188677" width="307.1860306505821" height="58.113207547169814"></rect><rect class="bar-join active" x="-1" y="107.92452830188677" width="2" height="58.113207547169814" style="opacity: 0;"></rect><text class="label" x="15" y="138.98113207547166" style="opacity: 1;">active</text></g><g><rect class="bar active" x="48.44510877643589" y="190.94339622641508" width="332.5096102382645" height="58.113207547169814"></rect><rect class="bar-join active" x="47.44510877643589" y="190.94339622641508" width="2" height="58.113207547169814" style="opacity: 1;"></rect><text class="label" x="63.44510877643589" y="221.99999999999997" style="opacity: 1;">active</text></g><g><rect class="bar current" x="0" y="190.94339622641508" width="48.44510877643589" height="58.113207547169814"></rect><rect class="bar-join current" x="-1" y="190.94339622641508" width="2" height="58.113207547169814" style="opacity: 0;"></rect><text class="label" x="15" y="221.99999999999997" style="opacity: 0;">current</text></g><g><rect class="bar active" x="315.9942322462977" y="273.9622641509434" width="277.45835026504193" height="58.113207547169814"></rect><rect class="bar-join active" x="314.9942322462977" y="273.9622641509434" width="2" height="58.113207547169814" style="opacity: 1;"></rect><text class="label" x="330.9942322462977" y="305.0188679245283" style="opacity: 1;">active</text></g><g><rect class="bar current" x="307.1860306505821" y="273.9622641509434" width="8.808201595715616" height="58.113207547169814"></rect><rect class="bar-join current" x="306.1860306505821" y="273.9622641509434" width="2" height="58.113207547169814" style="opacity: 0;"></rect><text class="label" x="322.1860306505821" y="305.0188679245283" style="opacity: 0;">current</text></g><g><rect class="bar active" x="500.9664657563257" y="356.9811320754717" width="277.45835026504193" height="58.113207547169814"></rect><rect class="bar-join active" x="499.9664657563257" y="356.9811320754717" width="2" height="58.113207547169814" style="opacity: 1;"></rect><text class="label" x="515.9664657563258" y="388.0377358490566" style="opacity: 1;">active</text></g><g><rect class="bar current" x="454.7234073788187" y="356.9811320754717" width="46.243058377507" height="58.113207547169814"></rect><rect class="bar-join current" x="453.7234073788187" y="356.9811320754717" width="2" height="58.113207547169814" style="opacity: 0;"></rect><text class="label" x="469.7234073788187" y="388.0377358490566" style="opacity: 0;">current</text></g></g></svg>
