@@ -6480,9 +6480,10 @@ lru-cache@^4.1.2:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
 
-lts@mansona/lts-schedule#generalisation:
-  version "1.0.2"
-  resolved "https://codeload.github.com/mansona/lts-schedule/tar.gz/663a550e112c388a26147ebf0876be988a36774d"
+lts@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/lts/-/lts-1.1.0.tgz#e3788fedcd7270dbe2b20403d9158f1309b495ca"
+  integrity sha512-tVG6byc9E7E802JTaXiwXg6UzGDao73XC/ElsjBkF9q6j+HVKTa7P9M3BuzsaQ1qtU+BRzOfm6fIvDJQnNe8Kw==
   dependencies:
     bossy "3.0.4"
     d3 "4.7.4"
