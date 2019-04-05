@@ -4,6 +4,8 @@
 
 This app is used for the Builds page at [http://emberjs.com/builds/](http://emberjs.com/builds/).
 
+**NOTE** This application has been merged into https://github.com/ember-learn/ember-website.
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
